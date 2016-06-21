@@ -4,7 +4,8 @@
 - Install Clang
 - Install glib-2.0-dev
 - make all under src
-
+#Original readme
+```
 README for Wise2/Dynamite development
 
 
@@ -75,7 +76,7 @@ default is to use the gt-ag rule.
 Other interesting programs that will come out from this include
 promoterwise - a small region aligner designed for promoters
 and scanwise - a new protein searching engine.
-
+```
 
  
 
