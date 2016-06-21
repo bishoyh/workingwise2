@@ -1,10 +1,11 @@
 
 
-#Compiling
+# Compiling
 - Install Clang
 - Install glib-2.0-dev
 - make all under src
-#Original readme
+
+# Original readme
 ```
 README for Wise2/Dynamite development
 
