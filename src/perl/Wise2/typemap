@@ -1,0 +1,626 @@
+TYPEMAP
+void             T_IV
+boolean          T_IV
+aa               T_CHAR
+codon            T_IV
+base             T_IV
+Score            T_IV
+float            T_DOUBLE
+Probability      T_DOUBLE
+Bits             T_DOUBLE
+
+TYPEMAP
+Wise2_AlnBlock *    T_Wise2_AlnBlock
+
+INPUT
+T_Wise2_AlnBlock
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnBlock *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnBlock
+	sv_setref_pv($arg, "Wise2::AlnBlock", (void*) $var);
+
+TYPEMAP
+Wise2_AlnColumn *    T_Wise2_AlnColumn
+
+INPUT
+T_Wise2_AlnColumn
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnColumn *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnColumn
+	sv_setref_pv($arg, "Wise2::AlnColumn", (void*) $var);
+
+TYPEMAP
+Wise2_AlnUnit *    T_Wise2_AlnUnit
+
+INPUT
+T_Wise2_AlnUnit
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnUnit *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnUnit
+	sv_setref_pv($arg, "Wise2::AlnUnit", (void*) $var);
+
+TYPEMAP
+Wise2_AlnSequence *    T_Wise2_AlnSequence
+
+INPUT
+T_Wise2_AlnSequence
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnSequence *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnSequence
+	sv_setref_pv($arg, "Wise2::AlnSequence", (void*) $var);
+
+TYPEMAP
+Wise2_AlnRange *    T_Wise2_AlnRange
+
+INPUT
+T_Wise2_AlnRange
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnRange *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnRange
+	sv_setref_pv($arg, "Wise2::AlnRange", (void*) $var);
+
+TYPEMAP
+Wise2_AlnRangeSet *    T_Wise2_AlnRangeSet
+
+INPUT
+T_Wise2_AlnRangeSet
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_AlnRangeSet *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_AlnRangeSet
+	sv_setref_pv($arg, "Wise2::AlnRangeSet", (void*) $var);
+
+TYPEMAP
+Wise2_cDNA *    T_Wise2_cDNA
+
+INPUT
+T_Wise2_cDNA
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_cDNA *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_cDNA
+	sv_setref_pv($arg, "Wise2::cDNA", (void*) $var);
+
+TYPEMAP
+Wise2_cDNADB *    T_Wise2_cDNADB
+
+INPUT
+T_Wise2_cDNADB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_cDNADB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_cDNADB
+	sv_setref_pv($arg, "Wise2::cDNADB", (void*) $var);
+
+TYPEMAP
+Wise2_CodonTable *    T_Wise2_CodonTable
+
+INPUT
+T_Wise2_CodonTable
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_CodonTable *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_CodonTable
+	sv_setref_pv($arg, "Wise2::CodonTable", (void*) $var);
+
+TYPEMAP
+Wise2_CodonMapper *    T_Wise2_CodonMapper
+
+INPUT
+T_Wise2_CodonMapper
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_CodonMapper *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_CodonMapper
+	sv_setref_pv($arg, "Wise2::CodonMapper", (void*) $var);
+
+TYPEMAP
+Wise2_ComplexSequence *    T_Wise2_ComplexSequence
+
+INPUT
+T_Wise2_ComplexSequence
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ComplexSequence *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ComplexSequence
+	sv_setref_pv($arg, "Wise2::ComplexSequence", (void*) $var);
+
+TYPEMAP
+Wise2_ComplexSequenceEvalSet *    T_Wise2_ComplexSequenceEvalSet
+
+INPUT
+T_Wise2_ComplexSequenceEvalSet
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ComplexSequenceEvalSet *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ComplexSequenceEvalSet
+	sv_setref_pv($arg, "Wise2::ComplexSequenceEvalSet", (void*) $var);
+
+TYPEMAP
+Wise2_CompMat *    T_Wise2_CompMat
+
+INPUT
+T_Wise2_CompMat
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_CompMat *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_CompMat
+	sv_setref_pv($arg, "Wise2::CompMat", (void*) $var);
+
+TYPEMAP
+Wise2_DBSearchImpl *    T_Wise2_DBSearchImpl
+
+INPUT
+T_Wise2_DBSearchImpl
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DBSearchImpl *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DBSearchImpl
+	sv_setref_pv($arg, "Wise2::DBSearchImpl", (void*) $var);
+
+TYPEMAP
+Wise2_DnaMatrix *    T_Wise2_DnaMatrix
+
+INPUT
+T_Wise2_DnaMatrix
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DnaMatrix *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DnaMatrix
+	sv_setref_pv($arg, "Wise2::DnaMatrix", (void*) $var);
+
+TYPEMAP
+Wise2_DnaProbMatrix *    T_Wise2_DnaProbMatrix
+
+INPUT
+T_Wise2_DnaProbMatrix
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DnaProbMatrix *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DnaProbMatrix
+	sv_setref_pv($arg, "Wise2::DnaProbMatrix", (void*) $var);
+
+TYPEMAP
+Wise2_Gene *    T_Wise2_Gene
+
+INPUT
+T_Wise2_Gene
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Gene *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Gene
+	sv_setref_pv($arg, "Wise2::Gene", (void*) $var);
+
+TYPEMAP
+Wise2_Genomic *    T_Wise2_Genomic
+
+INPUT
+T_Wise2_Genomic
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Genomic *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Genomic
+	sv_setref_pv($arg, "Wise2::Genomic", (void*) $var);
+
+TYPEMAP
+Wise2_GenomicRepeat *    T_Wise2_GenomicRepeat
+
+INPUT
+T_Wise2_GenomicRepeat
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GenomicRepeat *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GenomicRepeat
+	sv_setref_pv($arg, "Wise2::GenomicRepeat", (void*) $var);
+
+TYPEMAP
+Wise2_GenomicDB *    T_Wise2_GenomicDB
+
+INPUT
+T_Wise2_GenomicDB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GenomicDB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GenomicDB
+	sv_setref_pv($arg, "Wise2::GenomicDB", (void*) $var);
+
+TYPEMAP
+Wise2_GenomicRegion *    T_Wise2_GenomicRegion
+
+INPUT
+T_Wise2_GenomicRegion
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GenomicRegion *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GenomicRegion
+	sv_setref_pv($arg, "Wise2::GenomicRegion", (void*) $var);
+
+TYPEMAP
+Wise2_Histogram *    T_Wise2_Histogram
+
+INPUT
+T_Wise2_Histogram
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Histogram *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Histogram
+	sv_setref_pv($arg, "Wise2::Histogram", (void*) $var);
+
+TYPEMAP
+Wise2_Hscore *    T_Wise2_Hscore
+
+INPUT
+T_Wise2_Hscore
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Hscore *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Hscore
+	sv_setref_pv($arg, "Wise2::Hscore", (void*) $var);
+
+TYPEMAP
+Wise2_DataScore *    T_Wise2_DataScore
+
+INPUT
+T_Wise2_DataScore
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DataScore *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DataScore
+	sv_setref_pv($arg, "Wise2::DataScore", (void*) $var);
+
+TYPEMAP
+Wise2_DataEntry *    T_Wise2_DataEntry
+
+INPUT
+T_Wise2_DataEntry
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DataEntry *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DataEntry
+	sv_setref_pv($arg, "Wise2::DataEntry", (void*) $var);
+
+TYPEMAP
+Wise2_PackAln *    T_Wise2_PackAln
+
+INPUT
+T_Wise2_PackAln
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_PackAln *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_PackAln
+	sv_setref_pv($arg, "Wise2::PackAln", (void*) $var);
+
+TYPEMAP
+Wise2_PackAlnUnit *    T_Wise2_PackAlnUnit
+
+INPUT
+T_Wise2_PackAlnUnit
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_PackAlnUnit *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_PackAlnUnit
+	sv_setref_pv($arg, "Wise2::PackAlnUnit", (void*) $var);
+
+TYPEMAP
+Wise2_Protein *    T_Wise2_Protein
+
+INPUT
+T_Wise2_Protein
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Protein *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Protein
+	sv_setref_pv($arg, "Wise2::Protein", (void*) $var);
+
+TYPEMAP
+Wise2_ProteinDB *    T_Wise2_ProteinDB
+
+INPUT
+T_Wise2_ProteinDB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ProteinDB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ProteinDB
+	sv_setref_pv($arg, "Wise2::ProteinDB", (void*) $var);
+
+TYPEMAP
+Wise2_RandomProteinDB *    T_Wise2_RandomProteinDB
+
+INPUT
+T_Wise2_RandomProteinDB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_RandomProteinDB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_RandomProteinDB
+	sv_setref_pv($arg, "Wise2::RandomProteinDB", (void*) $var);
+
+TYPEMAP
+Wise2_RandomDNADB *    T_Wise2_RandomDNADB
+
+INPUT
+T_Wise2_RandomDNADB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_RandomDNADB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_RandomDNADB
+	sv_setref_pv($arg, "Wise2::RandomDNADB", (void*) $var);
+
+TYPEMAP
+Wise2_RandomModelDNA *    T_Wise2_RandomModelDNA
+
+INPUT
+T_Wise2_RandomModelDNA
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_RandomModelDNA *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_RandomModelDNA
+	sv_setref_pv($arg, "Wise2::RandomModelDNA", (void*) $var);
+
+TYPEMAP
+Wise2_RandomModel *    T_Wise2_RandomModel
+
+INPUT
+T_Wise2_RandomModel
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_RandomModel *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_RandomModel
+	sv_setref_pv($arg, "Wise2::RandomModel", (void*) $var);
+
+TYPEMAP
+Wise2_Sequence *    T_Wise2_Sequence
+
+INPUT
+T_Wise2_Sequence
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Sequence *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Sequence
+	sv_setref_pv($arg, "Wise2::Sequence", (void*) $var);
+
+TYPEMAP
+Wise2_SequenceSet *    T_Wise2_SequenceSet
+
+INPUT
+T_Wise2_SequenceSet
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_SequenceSet *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_SequenceSet
+	sv_setref_pv($arg, "Wise2::SequenceSet", (void*) $var);
+
+TYPEMAP
+Wise2_SequenceDB *    T_Wise2_SequenceDB
+
+INPUT
+T_Wise2_SequenceDB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_SequenceDB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_SequenceDB
+	sv_setref_pv($arg, "Wise2::SequenceDB", (void*) $var);
+
+TYPEMAP
+Wise2_FileSource *    T_Wise2_FileSource
+
+INPUT
+T_Wise2_FileSource
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_FileSource *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_FileSource
+	sv_setref_pv($arg, "Wise2::FileSource", (void*) $var);
+
+TYPEMAP
+Wise2_Exon *    T_Wise2_Exon
+
+INPUT
+T_Wise2_Exon
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Exon *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Exon
+	sv_setref_pv($arg, "Wise2::Exon", (void*) $var);
+
+TYPEMAP
+Wise2_Transcript *    T_Wise2_Transcript
+
+INPUT
+T_Wise2_Transcript
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Transcript *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Transcript
+	sv_setref_pv($arg, "Wise2::Transcript", (void*) $var);
+
+TYPEMAP
+Wise2_Translation *    T_Wise2_Translation
+
+INPUT
+T_Wise2_Translation
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_Translation *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_Translation
+	sv_setref_pv($arg, "Wise2::Translation", (void*) $var);
+
+TYPEMAP
+Wise2_cDNAParser *    T_Wise2_cDNAParser
+
+INPUT
+T_Wise2_cDNAParser
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_cDNAParser *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_cDNAParser
+	sv_setref_pv($arg, "Wise2::cDNAParser", (void*) $var);
+
+TYPEMAP
+Wise2_DnaStartEnd *    T_Wise2_DnaStartEnd
+
+INPUT
+T_Wise2_DnaStartEnd
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DnaStartEnd *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DnaStartEnd
+	sv_setref_pv($arg, "Wise2::DnaStartEnd", (void*) $var);
+
+TYPEMAP
+Wise2_GeneFrequency21 *    T_Wise2_GeneFrequency21
+
+INPUT
+T_Wise2_GeneFrequency21
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GeneFrequency21 *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GeneFrequency21
+	sv_setref_pv($arg, "Wise2::GeneFrequency21", (void*) $var);
+
+TYPEMAP
+Wise2_GeneConsensus *    T_Wise2_GeneConsensus
+
+INPUT
+T_Wise2_GeneConsensus
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GeneConsensus *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GeneConsensus
+	sv_setref_pv($arg, "Wise2::GeneConsensus", (void*) $var);
+
+TYPEMAP
+Wise2_GeneSingleCons *    T_Wise2_GeneSingleCons
+
+INPUT
+T_Wise2_GeneSingleCons
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GeneSingleCons *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GeneSingleCons
+	sv_setref_pv($arg, "Wise2::GeneSingleCons", (void*) $var);
+
+TYPEMAP
+Wise2_GeneParameter21 *    T_Wise2_GeneParameter21
+
+INPUT
+T_Wise2_GeneParameter21
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_GeneParameter21 *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_GeneParameter21
+	sv_setref_pv($arg, "Wise2::GeneParameter21", (void*) $var);
+
+TYPEMAP
+Wise2_MatchSummarySet *    T_Wise2_MatchSummarySet
+
+INPUT
+T_Wise2_MatchSummarySet
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_MatchSummarySet *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_MatchSummarySet
+	sv_setref_pv($arg, "Wise2::MatchSummarySet", (void*) $var);
+
+TYPEMAP
+Wise2_MatchSummary *    T_Wise2_MatchSummary
+
+INPUT
+T_Wise2_MatchSummary
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_MatchSummary *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_MatchSummary
+	sv_setref_pv($arg, "Wise2::MatchSummary", (void*) $var);
+
+TYPEMAP
+Wise2_PfamHmmer1DB *    T_Wise2_PfamHmmer1DB
+
+INPUT
+T_Wise2_PfamHmmer1DB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_PfamHmmer1DB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_PfamHmmer1DB
+	sv_setref_pv($arg, "Wise2::PfamHmmer1DB", (void*) $var);
+
+TYPEMAP
+Wise2_PfamHmmer1Entry *    T_Wise2_PfamHmmer1Entry
+
+INPUT
+T_Wise2_PfamHmmer1Entry
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_PfamHmmer1Entry *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_PfamHmmer1Entry
+	sv_setref_pv($arg, "Wise2::PfamHmmer1Entry", (void*) $var);
+
+TYPEMAP
+Wise2_DnaSequenceHitList *    T_Wise2_DnaSequenceHitList
+
+INPUT
+T_Wise2_DnaSequenceHitList
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_DnaSequenceHitList *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_DnaSequenceHitList
+	sv_setref_pv($arg, "Wise2::DnaSequenceHitList", (void*) $var);
+
+TYPEMAP
+Wise2_SegmentHitList *    T_Wise2_SegmentHitList
+
+INPUT
+T_Wise2_SegmentHitList
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_SegmentHitList *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_SegmentHitList
+	sv_setref_pv($arg, "Wise2::SegmentHitList", (void*) $var);
+
+TYPEMAP
+Wise2_SegmentHit *    T_Wise2_SegmentHit
+
+INPUT
+T_Wise2_SegmentHit
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_SegmentHit *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_SegmentHit
+	sv_setref_pv($arg, "Wise2::SegmentHit", (void*) $var);
+
+TYPEMAP
+Wise2_ThreeStateDB *    T_Wise2_ThreeStateDB
+
+INPUT
+T_Wise2_ThreeStateDB
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ThreeStateDB *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ThreeStateDB
+	sv_setref_pv($arg, "Wise2::ThreeStateDB", (void*) $var);
+
+TYPEMAP
+Wise2_ThreeStateModel *    T_Wise2_ThreeStateModel
+
+INPUT
+T_Wise2_ThreeStateModel
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ThreeStateModel *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ThreeStateModel
+	sv_setref_pv($arg, "Wise2::ThreeStateModel", (void*) $var);
+
+TYPEMAP
+Wise2_ThreeStateUnit *    T_Wise2_ThreeStateUnit
+
+INPUT
+T_Wise2_ThreeStateUnit
+	$var = ($type) (SvROK($arg) == 0 ? NULL : (Wise2_ThreeStateUnit *) SvIV((SV*)SvRV($arg)))
+
+OUTPUT
+T_Wise2_ThreeStateUnit
+	sv_setref_pv($arg, "Wise2::ThreeStateUnit", (void*) $var);
