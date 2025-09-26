@@ -299,6 +299,8 @@ int Wise2_indicate_intron_used(GenomeEvidenceSet * set,AlnBlock * alb);
 #define indicate_intron_used Wise2_indicate_intron_used
 GenomeEvidenceSet * Wise2_read_est_evidence(FILE * ifp,CodonTable * ct);
 #define read_est_evidence Wise2_read_est_evidence
+int Wise2_est_evidence_free_wrapper(void * data);
+#define est_evidence_free_wrapper Wise2_est_evidence_free_wrapper
 GenomeEvidenceUnit * Wise2_new_est_GenomeEvidenceUnit(EstEvidence * evi);
 #define new_est_GenomeEvidenceUnit Wise2_new_est_GenomeEvidenceUnit
 int Wise2_est_utr5_start(void * data,ComplexSequence *seq,int jposition);

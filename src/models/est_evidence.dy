@@ -1,6 +1,3 @@
-
-
-
 %{
 #include "genome_evidence.h"
 #include "aln.h"
@@ -57,8 +54,8 @@ int indicate_intron_used(GenomeEvidenceSet * set,AlnBlock * alb)
 
   return has_used;
 }
-      
-  
+
+
 GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
 {
   char buffer[MAXLINE];
@@ -73,7 +70,7 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
   ges = GenomeEvidenceSet_alloc_std();
   evi = EstEvidence_alloc_std();
   evi->ct = hard_link_CodonTable(ct);
-  
+
   while( fgets(buffer,MAXLINE,ifp) != NULL ) {
     if( buffer[0] == '#' ) {
       continue;
@@ -84,7 +81,7 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
       evi = EstEvidence_alloc_std();
       evi->ct = hard_link_CodonTable(ct);
       continue;
-    } 
+    }
     if( strstartcmp(buffer,"exon") == 0 ) {
       exon = EstExon_alloc();
       exon->intron_3_score = 0;
@@ -125,6 +122,13 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
 }
 
 
+int est_evidence_free_wrapper(void * data)
+{
+  EstEvidence * evi = (EstEvidence *) data;
+  free_EstEvidence(evi);
+  return 0;
+}
+
 GenomeEvidenceUnit * new_est_GenomeEvidenceUnit(EstEvidence * evi)
 {
   GenomeEvidenceUnit * in;
@@ -139,7 +143,7 @@ GenomeEvidenceUnit * new_est_GenomeEvidenceUnit(EstEvidence * evi)
   in->utr_pot = est_utr_pot;
   in->cds_intron_pot = est_intron_pot;
   in->utr_intron_pot = est_intron_pot;
-  in->geu_free = free_EstEvidence;
+  in->geu_free = est_evidence_free_wrapper;
   in->frameshift_cds = est_cds_frameshift;
   in->stop_pot = est_stop_pot;
   in->start_pot = est_start_pot;
@@ -286,7 +290,7 @@ int est_cds_pot(void * data,ComplexSequence *seq,int jposition)
 	if( est->exon[i]->is_coding == TRUE ) {
 	  /* phase calculation. difference between start and position */
 
-	  /* more complex than it looks due to convention of where a 
+	  /* more complex than it looks due to convention of where a
 	     codon lies and the phase convention */
 
 	  relative_frame = (jposition-est->exon[i]->start)%3;
@@ -320,8 +324,8 @@ int est_3ss(void * data,ComplexSequence *seq,int jposition)
   if( jposition == 0 ) {
     return -10000;
   }
-  
-	
+
+
   for(i=0;i<est->len;i++) {
     if( jposition+1 == est->exon[i]->start ) {
       return 50;
@@ -330,10 +334,10 @@ int est_3ss(void * data,ComplexSequence *seq,int jposition)
     if( abs(jposition+1 - est->exon[i]->start) < est->in_smell && seq->seq->seq[jposition] == 'G' && seq->seq->seq[jposition-1] == 'A' ) {
       return -400;
     }
-    
+
 
   }
-  
+
   return -10000;
 }
 
@@ -347,7 +351,7 @@ int est_5ss(void * data,ComplexSequence * seq,int jposition)
   if( jposition == 0 || jposition >= seq->seq->len+2 ) {
     return -10000;
   }
-  
+
   for(i=0;i<est->len;i++) {
     if( jposition-1 == est->exon[i]->end ) {
       if( est->exon[i]->used == 0 ) {
@@ -356,16 +360,16 @@ int est_5ss(void * data,ComplexSequence * seq,int jposition)
 	return 10+est->exon[i]->intron_3_score;
       }
     }
-    
+
     if( abs(jposition-1 - est->exon[i]->end) < est->in_smell && seq->seq->seq[jposition] == 'G' && seq->seq->seq[jposition+1] == 'T' ) {
       return -400;
     }
-    
+
   }
-  
+
   return -10000;
 }
- 
+
 
 int est_utr_pot(void * data,ComplexSequence *seq,int jposition)
 {
@@ -383,7 +387,5 @@ int est_utr_pot(void * data,ComplexSequence *seq,int jposition)
 }
 
 
-
-
-
+%}
 

@@ -216,11 +216,11 @@ CompressedProteinClient * new_CompressedProteinClient(void)
 }
 
 
-boolean add_direct_number_CompressedProteinIndex(void * data,int seq_number,Sequence * target, int pos) 
+boolean add_direct_number_CompressedProteinIndex(void * data,int seq_number,Sequence * target, int pos)
 {
   fatal("For compressed protein indexes, impossible to add numbers directly");
 
-  return NULL;
+  return FALSE;
 }
 
 ArraySeqHead * lookup_array_head_CompressedProteinIndex(void * data,int seq_number)

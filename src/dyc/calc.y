@@ -7,6 +7,9 @@ extern ExprTree * root;
 extern char * calc_lex_string;
 extern int stringpos;
 
+int yylex(void);
+void yyerror(char * s);
+
 %}
 
 %union {

@@ -40,7 +40,7 @@ CC = clang
 CFLAGS = -c -O3  `pkg-config --cflags --libs glib-2.0` -std=gnu90
 
 
-EXTRALIBS = -lm
+EXTRALIBS = -lm -no-pie
 
 
 #

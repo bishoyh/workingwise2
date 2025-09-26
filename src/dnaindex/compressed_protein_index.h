@@ -172,7 +172,7 @@ SeqLookupClientInterface * Wise2_get_client_CompressedProteinIndex(void * data);
 #define get_client_CompressedProteinIndex Wise2_get_client_CompressedProteinIndex
 CompressedProteinClient * Wise2_new_CompressedProteinClient(void) ;
 #define new_CompressedProteinClient Wise2_new_CompressedProteinClient
-boolean Wise2_add_direct_number_CompressedProteinIndex(void * data,int seq_number,Sequence * target, int pos) ;
+boolean Wise2_add_direct_number_CompressedProteinIndex(void * data,int seq_number,Sequence * target, int pos);
 #define add_direct_number_CompressedProteinIndex Wise2_add_direct_number_CompressedProteinIndex
 ArraySeqHead * Wise2_lookup_array_head_CompressedProteinIndex(void * data,int seq_number);
 #define lookup_array_head_CompressedProteinIndex Wise2_lookup_array_head_CompressedProteinIndex

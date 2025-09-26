@@ -7,6 +7,7 @@
 #undef YY_INPUT
 #define YY_INPUT(b, r, ms) (r = my_yyinput(b, ms))
 #undef yywrap
+int my_yyinput(char * buf, int max_size);
 #endif
 
 extern char * calc_lex_string;

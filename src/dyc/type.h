@@ -34,7 +34,7 @@ enum SCOPE_TYPE {
 
 /*** declare yyparse ****/
 
-void yyparse(void);
+int yyparse(void);
 
 struct ScopeUnit {  
     int dynamite_hard_link;  

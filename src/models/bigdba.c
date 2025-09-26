@@ -8,7 +8,7 @@ extern "C" {
 
   /*****************   C functions  ****************/
   /*             Written using dynamite            */
-  /*            Sat Sep  8 09:05:31 2007           */
+  /*            Fri Sep 26 00:15:39 2025           */
   /*            email birney@sanger.ac.uk          */
   /* http://www.sanger.ac.uk/Users/birney/dynamite */
   /*************************************************/
@@ -463,7 +463,7 @@ Search_Return_Type search_BigDnaMatchBlock(DBSearchImpl * dbsi,Hscore * out,Comp
       return SEARCH_ERROR;   
       }  
     if( dbsi->trace_level > 5 )  
-      warn("Asking for trace level of %d in database search for BigDnaMatchBlock, but it was compiled with a trace level of -2139062144. Not all trace statements can be shown",dbsi->trace_level);  
+      warn("Asking for trace level of %d in database search for BigDnaMatchBlock, but it was compiled with a trace level of 0. Not all trace statements can be shown",dbsi->trace_level);    
     switch(dbsi->type)   { /*switch on implementation*/ 
       case DBSearchImpl_Serial : 
         return serial_search_BigDnaMatchBlock(out,query,target ,comp55,comp65,comp75,comp85,comp95,g,g65,g55,u,v,s,b);   

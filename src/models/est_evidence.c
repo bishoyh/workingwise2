@@ -3,7 +3,7 @@ extern "C" {
 #endif
 #include "est_evidence.h"
 
-# line 33 "est_evidence.dy"
+# line 30 "est_evidence.dy"
 int indicate_intron_used(GenomeEvidenceSet * set,AlnBlock * alb)
 {
   AlnColumn * alc;
@@ -31,9 +31,9 @@ int indicate_intron_used(GenomeEvidenceSet * set,AlnBlock * alb)
 
   return has_used;
 }
-      
-  
-# line 62 "est_evidence.dy"
+
+
+# line 59 "est_evidence.dy"
 GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
 {
   char buffer[MAXLINE];
@@ -48,7 +48,7 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
   ges = GenomeEvidenceSet_alloc_std();
   evi = EstEvidence_alloc_std();
   evi->ct = hard_link_CodonTable(ct);
-  
+
   while( fgets(buffer,MAXLINE,ifp) != NULL ) {
     if( buffer[0] == '#' ) {
       continue;
@@ -59,7 +59,7 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
       evi = EstEvidence_alloc_std();
       evi->ct = hard_link_CodonTable(ct);
       continue;
-    } 
+    }
     if( strstartcmp(buffer,"exon") == 0 ) {
       exon = EstExon_alloc();
       exon->intron_3_score = 0;
@@ -100,7 +100,15 @@ GenomeEvidenceSet * read_est_evidence(FILE * ifp,CodonTable * ct)
 }
 
 
-# line 128 "est_evidence.dy"
+# line 125 "est_evidence.dy"
+int est_evidence_free_wrapper(void * data)
+{
+  EstEvidence * evi = (EstEvidence *) data;
+  free_EstEvidence(evi);
+  return 0;
+}
+
+# line 132 "est_evidence.dy"
 GenomeEvidenceUnit * new_est_GenomeEvidenceUnit(EstEvidence * evi)
 {
   GenomeEvidenceUnit * in;
@@ -115,7 +123,7 @@ GenomeEvidenceUnit * new_est_GenomeEvidenceUnit(EstEvidence * evi)
   in->utr_pot = est_utr_pot;
   in->cds_intron_pot = est_intron_pot;
   in->utr_intron_pot = est_intron_pot;
-  in->geu_free = free_EstEvidence;
+  in->geu_free = est_evidence_free_wrapper;
   in->frameshift_cds = est_cds_frameshift;
   in->stop_pot = est_stop_pot;
   in->start_pot = est_start_pot;
@@ -127,7 +135,7 @@ GenomeEvidenceUnit * new_est_GenomeEvidenceUnit(EstEvidence * evi)
 }
 
 
-# line 154 "est_evidence.dy"
+# line 158 "est_evidence.dy"
 int est_utr5_start(void * data,ComplexSequence *seq,int jposition)
 {
   EstEvidence * est;
@@ -141,7 +149,7 @@ int est_utr5_start(void * data,ComplexSequence *seq,int jposition)
 
 }
 
-# line 167 "est_evidence.dy"
+# line 171 "est_evidence.dy"
 int est_utr3_end(void * data,ComplexSequence *seq,int jposition)
 {
   EstEvidence * est;
@@ -155,7 +163,7 @@ int est_utr3_end(void * data,ComplexSequence *seq,int jposition)
 
 }
 
-# line 180 "est_evidence.dy"
+# line 184 "est_evidence.dy"
 int est_start_pot(void * data,ComplexSequence *seq,int jposition)
 {
   EstEvidence * est;
@@ -176,7 +184,7 @@ int est_start_pot(void * data,ComplexSequence *seq,int jposition)
 }
 
 
-# line 200 "est_evidence.dy"
+# line 204 "est_evidence.dy"
 int est_stop_pot(void * data,ComplexSequence *seq,int jposition)
 {
   EstEvidence * est;
@@ -191,7 +199,7 @@ int est_stop_pot(void * data,ComplexSequence *seq,int jposition)
 }
 
 
-# line 214 "est_evidence.dy"
+# line 218 "est_evidence.dy"
 int est_cds_frameshift(void * data,ComplexSequence * seq,int jposition,int jump)
 {
   EstEvidence * est;
@@ -209,7 +217,7 @@ int est_cds_frameshift(void * data,ComplexSequence * seq,int jposition,int jump)
 }
 
 
-# line 231 "est_evidence.dy"
+# line 235 "est_evidence.dy"
 int est_cds_3SS(void * data,ComplexSequence *seq,int jposition,int phase)
 {
   switch(phase) {
@@ -220,7 +228,7 @@ int est_cds_3SS(void * data,ComplexSequence *seq,int jposition,int phase)
   }
 }
 
-# line 241 "est_evidence.dy"
+# line 245 "est_evidence.dy"
 int est_cds_5SS(void * data,ComplexSequence *seq,int jposition,int phase)
 {
   switch(phase) {
@@ -232,7 +240,7 @@ int est_cds_5SS(void * data,ComplexSequence *seq,int jposition,int phase)
 }
 
 
-# line 252 "est_evidence.dy"
+# line 256 "est_evidence.dy"
 int est_intron_pot(void * data,ComplexSequence *seq,int jposition)
 {
   EstEvidence * est;
@@ -253,7 +261,7 @@ int est_intron_pot(void * data,ComplexSequence *seq,int jposition)
 }
 
 
-# line 272 "est_evidence.dy"
+# line 276 "est_evidence.dy"
 int est_cds_pot(void * data,ComplexSequence *seq,int jposition)
 {
   int i;
@@ -271,7 +279,7 @@ int est_cds_pot(void * data,ComplexSequence *seq,int jposition)
 	if( est->exon[i]->is_coding == TRUE ) {
 	  /* phase calculation. difference between start and position */
 
-	  /* more complex than it looks due to convention of where a 
+	  /* more complex than it looks due to convention of where a
 	     codon lies and the phase convention */
 
 	  relative_frame = (jposition-est->exon[i]->start)%3;
@@ -296,7 +304,7 @@ int est_cds_pot(void * data,ComplexSequence *seq,int jposition)
   return -1000000;
 }
 
-# line 314 "est_evidence.dy"
+# line 318 "est_evidence.dy"
 int est_3ss(void * data,ComplexSequence *seq,int jposition)
 {
   int i;
@@ -306,8 +314,8 @@ int est_3ss(void * data,ComplexSequence *seq,int jposition)
   if( jposition == 0 ) {
     return -10000;
   }
-  
-	
+
+
   for(i=0;i<est->len;i++) {
     if( jposition+1 == est->exon[i]->start ) {
       return 50;
@@ -316,15 +324,15 @@ int est_3ss(void * data,ComplexSequence *seq,int jposition)
     if( abs(jposition+1 - est->exon[i]->start) < est->in_smell && seq->seq->seq[jposition] == 'G' && seq->seq->seq[jposition-1] == 'A' ) {
       return -400;
     }
-    
+
 
   }
-  
+
   return -10000;
 }
 
 
-# line 341 "est_evidence.dy"
+# line 345 "est_evidence.dy"
 int est_5ss(void * data,ComplexSequence * seq,int jposition)
 {
   int i;
@@ -334,7 +342,7 @@ int est_5ss(void * data,ComplexSequence * seq,int jposition)
   if( jposition == 0 || jposition >= seq->seq->len+2 ) {
     return -10000;
   }
-  
+
   for(i=0;i<est->len;i++) {
     if( jposition-1 == est->exon[i]->end ) {
       if( est->exon[i]->used == 0 ) {
@@ -343,18 +351,18 @@ int est_5ss(void * data,ComplexSequence * seq,int jposition)
 	return 10+est->exon[i]->intron_3_score;
       }
     }
-    
+
     if( abs(jposition-1 - est->exon[i]->end) < est->in_smell && seq->seq->seq[jposition] == 'G' && seq->seq->seq[jposition+1] == 'T' ) {
       return -400;
     }
-    
+
   }
-  
+
   return -10000;
 }
- 
 
-# line 370 "est_evidence.dy"
+
+# line 374 "est_evidence.dy"
 int est_utr_pot(void * data,ComplexSequence *seq,int jposition)
 {
   int i;
@@ -371,11 +379,7 @@ int est_utr_pot(void * data,ComplexSequence *seq,int jposition)
 }
 
 
-
-
-
-
-# line 377 "est_evidence.c"
+# line 381 "est_evidence.c"
 /* Function:  hard_link_EstExon(obj)
  *
  * Descrip:    Bumps up the reference count of the object

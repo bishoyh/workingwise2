@@ -9,7 +9,7 @@ extern "C" {
 
   /*****************   C functions  ****************/
   /*             Written using dynamite            */
-  /*            Sat Sep  8 09:05:32 2007           */
+  /*            Thu Sep 25 23:34:34 2025           */
   /*            email birney@sanger.ac.uk          */
   /* http://www.sanger.ac.uk/Users/birney/dynamite */
   /*************************************************/
@@ -510,7 +510,7 @@ Search_Return_Type search_GeneWise6(DBSearchImpl * dbsi,Hscore * out,GeneWiseDB*
       return SEARCH_ERROR;   
       }  
     if( dbsi->trace_level > 5 )  
-      warn("Asking for trace level of %d in database search for GeneWise6, but it was compiled with a trace level of -2139062144. Not all trace statements can be shown",dbsi->trace_level); 
+      warn("Asking for trace level of %d in database search for GeneWise6, but it was compiled with a trace level of 32. Not all trace statements can be shown",dbsi->trace_level);  
     switch(dbsi->type)   { /*switch on implementation*/ 
       case DBSearchImpl_Serial : 
         return serial_search_GeneWise6(out,querydb, targetdb ,gp);   

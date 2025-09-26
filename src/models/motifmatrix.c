@@ -407,7 +407,7 @@ MotifConsMatrix * MotifConsMatrix_alloc_matrix(int leni,int lenj)
 
     for(i=0;i<leni;i++)  {  
       for(j=0;j<lenj;j++)    
-        out->mat[i][j] = NULL;   
+        out->mat[i][j] = 0;   
       }  
 
 

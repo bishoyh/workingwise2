@@ -12,8 +12,8 @@ RANLIB_NEEDED = 0
 all : scanwise_server client_multihspscan.o
 
 
-scanwise_server : wise_proteinindex_server.o net_hspscan.o ../dynlibsrc/libdyna.a ../dynlibsrc/libdyna_glib.a ../dnaindex/compressed_protein_index.o ../dnaindex/kmer_index_interface.o ../dnaindex/singleseqspace.o ../dnaindex/kmer_direct.o 
-	$(CC) -g -o scanwise_server wise_proteinindex_server.o net_hspscan.o ../dnaindex/compressed_protein_index.o ../dnaindex/kmer_index_interface.o ../dnaindex/singleseqspace.o ../dnaindex/kmer_direct.o  -ldyna_glib -ldyna -lwisesocket -lwisebase $(LFLAGS) -lpthread 
+scanwise_server : wise_proteinindex_server.o net_hspscan.o ../dynlibsrc/libdyna.a ../dynlibsrc/libdyna_glib.a ../dnaindex/compressed_protein_index.o ../dnaindex/kmer_index_interface.o ../dnaindex/singleseqspace.o ../dnaindex/kmer_direct.o
+	$(CC) -no-pie -g -o scanwise_server wise_proteinindex_server.o net_hspscan.o ../dnaindex/compressed_protein_index.o ../dnaindex/kmer_index_interface.o ../dnaindex/singleseqspace.o ../dnaindex/kmer_direct.o  -ldyna_glib -ldyna -lwisesocket -lwisebase $(LFLAGS) -lpthread 
 
 
 .c.o :

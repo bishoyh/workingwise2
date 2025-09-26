@@ -60,15 +60,15 @@ DFLAGS = -l
 	$(CC) $(CFLAGS) $(INCFLAGS) $?
 
 .dy.o :
-	dyc $(DFLAGS) $<	
+	./dyc $(DFLAGS) $<
 	$(CC) $(CFLAGS) $*.c
 
-.dy.c : 
-	dyc $(DFLAGS) $<	
+.dy.c :
+	./dyc $(DFLAGS) $<
 
 
-init : 
-	dyc $(DFLAGS) *.dy
+init :
+	./dyc $(DFLAGS) *.dy
 
 #
 # pro2DNAmatrix.c pro2DNAmatrix.h : pro2DNAmatrix.dy
