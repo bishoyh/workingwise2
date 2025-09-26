@@ -46,7 +46,12 @@ brew install clang glib bison flex
    ```bash
    make test
    ```
-
+## Easy compiliation 
+This script should work in most cases
+```bash
+build.sh clean # clean build files
+build.sh #will build everything
+```
 ## Installation
 
 Binaries will be located in `src/bin/` after successful compilation. There is no automated install process - copy binaries to your desired location manually.
